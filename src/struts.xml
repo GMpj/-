@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<package name="register" extends="struts-default">
+
+		<action name="student_register" class="test_online.action.StudentRegisterAction">
+
+			<result name="register_success">/register_success.jsp</result>
+			<result name="register_false">/register_false.jsp</result>
+		</action>
+		<action name="student_login" class="test_online.action.StudentLoginAction">
+
+			<result name="login_success">/index.jsp</result>
+			<result name="login_false">/register_false.jsp</result>
+		</action>
+		<action name="test_action" class="test_online.action.TestAction">
+		
+		     <result name="show_success">/show_test.jsp</result>
+		     <result name="show_false">/register_false.jsp</result>
+		     <result name="grade_success">/register_success.jsp</result>
+		</action>
+		<action name="message_action" class="test_online.action.MessageAction">
+		
+		     <result name="show_false">/register_false.jsp</result>
+		     <result name="show_messages">/show_messages.jsp</result>
+		     <result name="show_message">/show_message.jsp</result>
+		</action>
+		<action name="manger_action" class="test_online.action.MangerAction">
+		
+		     <result name="show_false">/register_false.jsp</result>
+		     <result name="show_messages">/show_messages.jsp</result>
+		     <result name="show_message">/show_message.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
+	
