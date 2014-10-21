@@ -53,6 +53,7 @@ public class MangerManger {
 		//System.out.println(hibernateTemplate.get(Comments.class, com_id));
 		if(t.getName().equals(author)||t.getManger()==1){
 	   hibernateTemplate.delete(hibernateTemplate.get(Comments.class, com_id));
+	   System.out.println("ok");
 	   List <MMessage>mess= hibernateTemplate.find("from MMessage mess where m_id= '"+m_id+"'");
 	   MMessage message=mess.get(0);
 	   message.setCom_number(message.getCom_number()-1);

@@ -28,6 +28,7 @@ public class MangerAction extends ActionSupport {
 		 else return "show_false";
 	 }
 	 public String delete_comment()throws Exception{
+		 System.out.println(m_id);
 		 if(mangermanger.deleteComment(com_id,author,m_id)){
 			 if(messagemanger.showMessage(m_id))
 		 return "show_message";

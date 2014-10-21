@@ -22,16 +22,20 @@
 		     <result name="show_false">/register_false.jsp</result>
 		     <result name="grade_success">/register_success.jsp</result>
 		</action>
-		<action name="message_action" class="test_online.action.MessageAction">
+		<action name="message_action_*" class="test_online.action.MessageAction" method="{1}">
 		
 		     <result name="show_false">/register_false.jsp</result>
 		     <result name="show_messages">/show_messages.jsp</result>
 		     <result name="show_message">/show_message.jsp</result>
+		     <result type="chain" name="save_success">
+		     <param name="actionName">message_action_show_message</param>
+		     </result>
+		      <result type="redirect" name="success">/show_message.jsp</result>
 		</action>
 		<action name="manger_action" class="test_online.action.MangerAction">
 		
 		     <result name="show_false">/register_false.jsp</result>
-		     <result name="show_messages">/show_messages.jsp</result>
+		     <result type="redirect" name="show_messages">/show_messages.jsp</result>
 		     <result name="show_message">/show_message.jsp</result>
 		</action>
 	</package>

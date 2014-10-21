@@ -87,6 +87,7 @@ public class MessageManger {
 		System.out.println("成功获取时间");
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("messages",messages );
+		request.setAttribute("fromAction", true);
 		for(int i=0;i<messages.size();i++)
 			System.out.println(messages.get(i).getTitle());
 		return true;

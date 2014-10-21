@@ -1,5 +1,8 @@
 package test_online.action;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -39,15 +42,24 @@ public class MessageAction extends ActionSupport {
 	 }
 	 public String show_messages()throws Exception{
 			if(mm.showMessages())
-			 return "show_messages";
+			{
+				//HttpServletRequest request=ServletActionContext.getRequest();
+				///request.setAttribute("fromAction", true);
+				 return "show_messages";
+				 
+			}
+			
 			else return "show_false";
 		 }
 	 public String save_comment()throws Exception{
 		 System.out.println(comment);
 		if( mm.saveComments(m_id, comment, par_comm)){
-			if(mm.showMessage(m_id))
-				return "show_message";
-			else return "show_false";
+			//if(mm.showMessage(m_id))
+				//return "show_message";
+			//else return "show_false";
+			//HttpServletRequest request=ServletActionContext.getRequest();
+			
+			return"success";
 		}
 			
 		 
