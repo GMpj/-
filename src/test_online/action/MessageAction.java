@@ -6,6 +6,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import test_online.serves.AnalyzeURL;
 import test_online.serves.MessageManger;
 import test_online.serves.StudentManger;
 
@@ -36,6 +37,11 @@ public class MessageAction extends ActionSupport {
 	 
 	 public String show_message()throws Exception{
 		 System.out.println(m_id);
+		HttpServletRequest request=ServletActionContext.getRequest();
+		System.out.println(request.getRequestURI());
+		//m_id=Integer.valueOf(AnalyzeURL.AnalyzeURLid(request.getRequestURI().toString()));
+		//request.getRequestURL()
+		System.out.println(m_id);
 		if(mm.showMessage(m_id))
 		 return "show_message";
 		else return "show_false";

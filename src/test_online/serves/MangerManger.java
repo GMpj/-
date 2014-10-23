@@ -25,6 +25,7 @@ public class MangerManger {
 	   ActionContext ac = ActionContext.getContext();
 		Student t=new Student();
 		t=(Student) ac.getSession().get("student");
+		if(t!=null){
 		if(t.getManger()==1){
      
 	    hibernateTemplate.delete(hibernateTemplate.get(MMessage.class, m_id));
@@ -33,7 +34,9 @@ public class MangerManger {
 	   System.out.println("删除帖子成功");
 	   return true;
 	   }
-	   return false;
+		else return false;
+		}
+		else return false;
    }
    /**
     * 测试equals
@@ -45,6 +48,7 @@ public class MangerManger {
 	   ActionContext ac = ActionContext.getContext();
 		Student t=new Student();
 		t=(Student) ac.getSession().get("student");
+		if(t!=null){
 		System.out.println(author);
 		System.out.println(t.getName()==author);
 		System.out.println(t.getName().equals(author));
@@ -61,6 +65,8 @@ public class MangerManger {
 	   System.out.println("删除回复成功"); 
 	   return true;
 	   }
+		else return false;
+		}
 		else return false;
    }
 	

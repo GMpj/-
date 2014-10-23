@@ -11,12 +11,14 @@
 <script type="text/javascript">
 function ck(){
 	if(!document.getElementById("fromAction").value)
+		//var str=<s:property value="#request.messages"/>;
+		//if(!str)
 		document.getElementById("show").submit();
 	}
 </script>
 <body onload="ck()">
 
-	<input type="hidden"  id="fromAction" value=<s:property value="#request.messages"/>> 
+	<input type="hidden"  id="fromAction" value=<s:property value="#request.fromAction"/>> 
    
    <form method="post" action="message_action_show_messages" id="show">
 	   </form>
@@ -31,7 +33,7 @@ function ck(){
            <td><s:property value="author"/></td>
            <td><s:property value="message_date"/></td> 
            
-            <form method="post" action="message_action_show_message">
+            <form method="get" action="message_action!show_message">
            <td><input type="submit" name=submit value="²é¿´">
 	  <input type="hidden"  name="m_id" value=<s:property value="m_id"/>> </td>
 	   </form>

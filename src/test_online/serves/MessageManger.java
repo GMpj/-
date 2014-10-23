@@ -74,6 +74,7 @@ public class MessageManger {
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("message",message.get(0) );
+		request.setAttribute("fromAction", true);
 		//System.out.println(message.get(0).getMessage());
 		//for(int i=0;i<comments.size();i++)
 			//System.out.println(comments.get(i).getComment());
